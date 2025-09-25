@@ -1,16 +1,19 @@
 #include <stdio.h>
 
 int main() {
-    double d1, d2, d3, maior;
+    int nota;
 
-    printf("Digite as tres distancias: ");
-    scanf("%lf %lf %lf", &d1, &d2, &d3);
+    printf("Digite a nota (1 a 5): ");
+    scanf("%d", &nota);
 
-    maior = d1;
-    if(d2 > maior) maior = d2;
-    if(d3 > maior) maior = d3;
-
-    printf("Maior distancia = %.2lf\n", maior);
+    switch(nota) {
+        case 1: printf("Conceito: Pessimo\n"); break;
+        case 2: printf("Conceito: Ruim\n"); break;
+        case 3: printf("Conceito: Bom\n"); break;
+        case 4: printf("Conceito: Muito bom\n"); break;
+        case 5: printf("Conceito: Excelente\n"); break;
+        default: printf("Nota invalida!\n");
+    }
 
     return 0;
 }

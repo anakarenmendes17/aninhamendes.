@@ -1,16 +1,22 @@
 #include <stdio.h>
-#include <math.h>
 
 int main() {
-    double r, area;
-    const double PI = 3.14159;
+    int anos;
 
-    printf("Digite o raio do circulo: ");
-    scanf("%lf", &r);
+    printf("Digite o tempo de servico (em anos): ");
+    scanf("%d", &anos);
 
-    area = PI * pow(r, 2);
-
-    printf("AREA = %.3lf\n", area);
+    if (anos >= 1 && anos <= 2) {
+        printf("Categoria: Junior\n");
+    } else if (anos >= 3 && anos <= 5) {
+        printf("Categoria: Pleno A\n");
+    } else if (anos == 6) {
+        printf("Categoria: Pleno B\n");
+    } else if (anos >= 7) {
+        printf("Categoria: Senior\n");
+    } else {
+        printf("Tempo invalido!\n");
+    }
 
     return 0;
 }

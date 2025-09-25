@@ -1,21 +1,25 @@
 #include <stdio.h>
-#include <math.h>
 
 int main() {
-    float a, b, c, delta, x1, x2;
+    int codigo;
+    float valor, desconto;
 
-    printf("Digite os coeficientes a, b e c: ");
-    scanf("%f %f %f", &a, &b, &c);
+    printf("Digite o valor total da compra: ");
+    scanf("%f", &valor);
 
-    delta = b*b - 4*a*c;
+    printf("Digite o codigo (1=visitante, 2=aluno): ");
+    scanf("%d", &codigo);
 
-    if(delta < 0) {
-        printf("Nao existem raizes reais.\n");
+    if (codigo == 1) { // visitante
+        desconto = valor * 0.05;
+    } else if (codigo == 2) { // aluno
+        desconto = valor * 0.10;
     } else {
-        x1 = (-b + sqrt(delta)) / (2*a);
-        x2 = (-b - sqrt(delta)) / (2*a);
-        printf("Raizes: x1 = %.2f, x2 = %.2f\n", x1, x2);
+        printf("Codigo invalido!\n");
+        return 0;
     }
+
+    printf("Valor a pagar: R$ %.2f\n", valor - desconto);
 
     return 0;
 }
